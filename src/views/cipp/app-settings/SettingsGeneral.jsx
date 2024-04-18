@@ -85,13 +85,6 @@ export function SettingsGeneral() {
       omit: showExtendedInfo,
       exportSelector: 'GDAPRoles',
     },
-    {
-      name: 'SAM User Roles',
-      selector: (row) => row?.SAMUserRoles,
-      cell: cellTableFormatter('SAMUserRoles', false, true),
-      omit: showExtendedInfo,
-      exportSelector: 'SAMUserRoles',
-    },
   ]
 
   const checkGDAPColumns = [
@@ -217,7 +210,7 @@ export function SettingsGeneral() {
       <CFormSwitch
         label="Show Extended Info"
         onChange={(e) => {
-          console.log(e)
+          //console.log(e)
           setShowExtendedInfo(!e.target.checked)
         }}
         key={'Show Extended Info'}
@@ -439,6 +432,7 @@ export function SettingsGeneral() {
                       columns={checkAccessColumns}
                       tableProps={tableProps}
                       data={accessCheckResult.data.Results}
+                      dynamicColumns={false}
                     />
                   )}
                 </CCol>
